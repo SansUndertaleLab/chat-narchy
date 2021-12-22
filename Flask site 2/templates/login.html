@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Login page</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+    <br>
+    Don't have an account? Click <a href="/register">here</a> to register!
+    {% for error in form.username.errors %}
+        <p>{{error}}</p>
+    {% endfor %}
+{% endblock %}

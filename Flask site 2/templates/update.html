@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Task</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <br><br><br><br>
+    <h1 style="text-align: center">Edit Message</h1>
+    <form action="/edit/{{ post.id }}" method="POST" autocomplete="off" style="text-align: center;">
+        <input type="text" name="content" id=content value="{{ post.message }}">
+        <input type="submit" value="Edit">
+    </form>
+</div>
+{% endblock %}
